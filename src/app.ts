@@ -5,6 +5,10 @@ import teacherRouter from "./routes/teacherRoutes";
 import testRouter from "./routes/studentRoutes";
 import { errorHandler } from "./middleware/errorHandler";
 import connectDB from "./config/db";
+import { specs, swaggerUi } from "./swagger"
+import cookieParser from "cookie-parser"
+
+
 
 dotenv.config();
 
@@ -13,6 +17,8 @@ const PORT = process.env.PORT || 8001;
 
 // Middleware
 app.use(express.json());
+app.use(cookieParser())
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs))
 
 connectDB();
 

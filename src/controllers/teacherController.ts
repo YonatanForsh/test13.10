@@ -20,7 +20,7 @@ export const createTeacher = async (req: Request, res: Response) => {
 
 export const getTeacherByName = async (req: Request, res: Response) => {
     try {
-        const resolt = await teacherService.getTeacher(req.body)
+        const resolt = await teacherService.getTeacher(req.params.teachername)
         res.status(200).json(resolt)
     } catch (err) {
         res.status(400).json(err)
