@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { createTest, 
-    getGradesByStudentName, 
-    getAvverageByClassName, 
+import {
+    createTest,
+    getGradesByStudentName,
+    getAvverageByClassName,
     getGradeByTestId,
     changeGradeByStudentName
- } from "../controllers/userController";
+} from "../controllers/testController";
 
 const testRouter = Router();
 
