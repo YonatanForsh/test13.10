@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import User, { IUser } from "../models/teacherModel";
+import User, { ITeacher } from "../models/teacherModel";
 import userService from "../services/userService"
 import { log } from "console";
 
