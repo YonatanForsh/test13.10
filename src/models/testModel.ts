@@ -11,9 +11,7 @@ export interface ITest extends Document {
 const TestSchema = new Schema<ITest>({
     subject: {
     type: String,
-    required: [true, "pleasw enter a subject"],
-    minlength: [4, "name too short!"],
-    maxlength: [20, "name too long!"],
+    required: [true, "pleasw enter a subject"]
   },
   grade: {
     type: Number,

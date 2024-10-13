@@ -13,10 +13,10 @@ const testRouter = Router();
 
 
 testRouter.post("/", createTest);
-testRouter.get("/:studentname", getGradesByStudentName);
-testRouter.get("/:classname", getAvverageByClassName);
+testRouter.get("/student/:studentname", getGradesByStudentName);
+testRouter.get("/class/:classname", getAvverageByClassName);
 testRouter.get("/:testid", getGradeByTestId);
-testRouter.patch("/:studentname", changeGradeByStudentName);
+testRouter.patch("/:testid", changeGradeByStudentName);
 
 
 

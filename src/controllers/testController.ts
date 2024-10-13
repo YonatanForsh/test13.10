@@ -40,7 +40,7 @@ export const getAvverageByClassName = async (req: Request, res: Response) => {
 
 export const getGradeByTestId = async (req: Request, res: Response) => {
     try {
-        const resolt = await testService.getGradeByTestId(req.body)
+        const resolt = await testService.getGradeByTestId(req.params.testid)
         res.status(200).json(resolt)
     } catch (err) {
         res.status(400).json(err)
@@ -50,7 +50,7 @@ export const getGradeByTestId = async (req: Request, res: Response) => {
 
 export const changeGradeByStudentName = async (req: Request, res: Response) => {
     try {
-        const resolt = await testService.changeGradeByStudentName(req.body)
+        const resolt = await testService.changeGradeByStudentName(req.body, req.params.testid)
         res.status(200).json(resolt)
     } catch (err) {
         res.status(400).json(err)
