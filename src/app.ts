@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
-import studentRouter from "./routes/postRoutes";
+import studentRouter from "./routes/studentRoutes";
 import teacherRouter from "./routes/teacherRoutes";
-import testRouter from "./routes/postRoutes";
+import testRouter from "./routes/studentRoutes";
 import { errorHandler } from "./middleware/errorHandler";
 import connectDB from "./config/db";
 
