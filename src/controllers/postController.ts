@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import Post, { IPost } from "../models/postModel";
+import Post, { IPost } from "../models/studentModel";
 import postService from "../services/postService";
 
 
@@ -10,12 +10,12 @@ export const createPost = async (req: Request, res: Response): Promise<void> => 
   try {
     const resolt = await postService.createPost(req.body)
     res.status(201).json({
-        msg: "post created succesfully",
-        resolt
-    })   
-} catch (err) {
+      msg: "post created succesfully",
+      resolt
+    })
+  } catch (err) {
     res.status(400).json(err)
-}
+  }
 };
 
 
@@ -23,10 +23,10 @@ export const createPost = async (req: Request, res: Response): Promise<void> => 
 export const deletePost = async (req: Request, res: Response): Promise<void> => {
   try {
     const resolt = await postService.deletePost
-    res.status(200).json(resolt)   
-} catch (err) {
+    res.status(200).json(resolt)
+  } catch (err) {
     res.status(400).json(err)
-}
+  }
 };
 
 
@@ -35,10 +35,10 @@ export const deletePost = async (req: Request, res: Response): Promise<void> => 
 export const getPosts = async (req: Request, res: Response): Promise<void> => {
   try {
     const resolt = await postService.getPosts
-    res.status(200).json(resolt)   
-} catch (err) {
+    res.status(200).json(resolt)
+  } catch (err) {
     res.status(400).json(err)
-}
+  }
 };
 
 
@@ -46,10 +46,10 @@ export const getPosts = async (req: Request, res: Response): Promise<void> => {
 export const getPost = async (req: Request, res: Response): Promise<void> => {
   try {
     const resolt = await postService.getPostById
-    res.status(200).json(resolt)   
-} catch (err) {
+    res.status(200).json(resolt)
+  } catch (err) {
     res.status(400).json(err)
-}
+  }
 };
 
 
@@ -57,10 +57,10 @@ export const getPost = async (req: Request, res: Response): Promise<void> => {
 export const updatePost = async (req: Request, res: Response): Promise<void> => {
   try {
     const resolt = await postService.updatePostDetails
-    res.status(200).json(resolt)   
-} catch (err) {
+    res.status(200).json(resolt)
+  } catch (err) {
     res.status(400).json(err)
-}
+  }
 };
 
 
@@ -68,10 +68,10 @@ export const updatePost = async (req: Request, res: Response): Promise<void> => 
 export const addComment = async (req: Request, res: Response): Promise<void> => {
   try {
     const resolt = await postService.createComment
-    res.status(200).json(resolt)   
-} catch (err) {
+    res.status(200).json(resolt)
+  } catch (err) {
     res.status(400).json(err)
-}
+  }
 };
 
 

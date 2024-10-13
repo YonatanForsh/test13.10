@@ -1,4 +1,4 @@
-import PostModel, {IPost} from "../models/postModel" 
+import PostModel, { IPost } from "../models/studentModel"
 
 
 
@@ -15,7 +15,7 @@ const createPost = async (post: IPost) => {
 
 
 const getPostById = async (user: typeof PostModel) => {
-    
+
 }
 
 
