@@ -1,8 +1,8 @@
-import UserModel, { IUser } from "../models/userModel" 
+import UserModel, { IUser } from "../models/teacherModel"
 import { userDTO } from "../dto/userDto"
 import { log } from "console"
 import mongoose from "mongoose"
-import userModel from "../models/userModel"
+import userModel from "../models/teacherModel"
 import { Schema } from "inspector/promises"
 
 
@@ -22,9 +22,9 @@ const createUser = async (user: IUser) => {
 
 
 const getUserById = async (username: string) => {
-    const user = await UserModel.findOne({username: username})
-    if(user) return user
-    else{
+    const user = await UserModel.findOne({ username: username })
+    if (user) return user
+    else {
         return "user not found"
     }
 }
@@ -33,7 +33,7 @@ const getUserById = async (username: string) => {
 const getUsers = async () => {
     try {
         const allUsers = await UserModel.find({})
-        return allUsers 
+        return allUsers
     } catch (err) {
         throw new Error("there aren't users yet")
     }
@@ -41,9 +41,9 @@ const getUsers = async () => {
 
 
 const deleteUser = async (username: string) => {
-    const user = await UserModel.findOne({username: username})
-    if(user){     
-        await UserModel.deleteOne({username: username})
+    const user = await UserModel.findOne({ username: username })
+    if (user) {
+        await UserModel.deleteOne({ username: username })
         return user
     } else {
         return "user not found"

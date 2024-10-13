@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import User, { IUser } from "../models/userModel";
+import User, { IUser } from "../models/teacherModel";
 import userService from "../services/userService"
 import { log } from "console";
 
@@ -14,7 +14,7 @@ export const createUser = async (req: Request, res: Response) => {
             resolt
         })
     } catch (err: any) {
-        res.status(400).json(err.message)        
+        res.status(400).json(err.message)
     }
 }
 
@@ -22,7 +22,7 @@ export const createUser = async (req: Request, res: Response) => {
 export const getUsers = async (req: Request, res: Response) => {
     try {
         const resolt = await userService.getUsers()
-        res.status(200).json(resolt)   
+        res.status(200).json(resolt)
     } catch (err) {
         res.status(400).json(err)
     }
@@ -31,10 +31,10 @@ export const getUsers = async (req: Request, res: Response) => {
 
 export const getUser = async (req: Request, res: Response) => {
     try {
-        if(req.params.username){
-        const resolt = await userService.getUserById(req.params.username)
-        res.status(200).json(resolt) 
-        }  
+        if (req.params.username) {
+            const resolt = await userService.getUserById(req.params.username)
+            res.status(200).json(resolt)
+        }
     } catch (err) {
         res.status(400).json(err)
     }
@@ -43,13 +43,13 @@ export const getUser = async (req: Request, res: Response) => {
 
 export const deleteUser = async (req: Request, res: Response) => {
     try {
-        if(req.params.username){
-        const resolt = await userService.deleteUser(req.params.username)
-        res.status(200).json({
-            msg: "user deleted",
-            resolt
-        }) 
-        }  
+        if (req.params.username) {
+            const resolt = await userService.deleteUser(req.params.username)
+            res.status(200).json({
+                msg: "user deleted",
+                resolt
+            })
+        }
     } catch (err) {
         res.status(400).json(err)
     }
