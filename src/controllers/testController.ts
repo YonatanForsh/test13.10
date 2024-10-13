@@ -9,7 +9,7 @@ export const createTest = async (req: Request, res: Response) => {
     try {
         const resolt = await testService.createTest(req.body)
         res.status(201).json({
-            msg: "teacher created",
+            msg: "test created",
             resolt
         })
     } catch (err: any) {
@@ -20,7 +20,7 @@ export const createTest = async (req: Request, res: Response) => {
 
 export const getGradesByStudentName = async (req: Request, res: Response) => {
     try {
-        const resolt = await testService.getGradesByStudentName(req.body)
+        const resolt = await testService.getGradesByStudentName(req.params.studentname)
         res.status(200).json(resolt)
     } catch (err) {
         res.status(400).json(err)

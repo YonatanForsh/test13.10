@@ -10,26 +10,23 @@ import teacherModel from "../models/teacherModel"
 const createTeacher = async (teacher: ITeacher) => {
     try {
         const newTeacher = new TeacherModel(teacher);
-        await newTeacher.save();
+        await newTeacher.save()
         return newTeacher
     } catch (err: any) {
-        // if (err.code === 11000) {
-        //     throw new Error("Username already exists")
-        // }
-        throw new Error("Invalid teacher");
+        return err.message
     }
 };
 
 
 const getTeacher = async (teacherName: string) => {
     try {
-    // const user = await TeacherModel.findOne({ username: teacherName })
-    // if (user) return user
-    // else {
-    //     return "user not found"
-    // }
+        const teacer = await TeacherModel.findOne({ name: teacherName})
+        if(teacer) return teacer
+        else{
+            return "teacher not found"
+        }
     } catch (err) {
-            
+        throw new Error("Invalid teacherName");
     }
 }
 
