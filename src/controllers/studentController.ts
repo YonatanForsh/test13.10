@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import studentService from "../services/postService";
+import studentService from "../services/studentService";
 import Student, { IStudent } from "../models/studentModel";
 
 
@@ -22,7 +22,7 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
 
 export const getStudentByName = async (req: Request, res: Response): Promise<void> => {
   try {
-    const resolt = await studentService.getStudent
+    const resolt = await studentService.getStudent(req.body)
     res.status(200).json(resolt)
   } catch (err) {
     res.status(400).json(err)

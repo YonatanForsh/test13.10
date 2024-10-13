@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import teacherService from "../services/userService"
+import teacherService from "../services/teacherService"
 import Teacher, { ITeacher } from "../models/teacherModel";
 import { log } from "console";
 
@@ -20,7 +20,7 @@ export const createTeacher = async (req: Request, res: Response) => {
 
 export const getTeacherByName = async (req: Request, res: Response) => {
     try {
-        const resolt = await teacherService.getTeacher()
+        const resolt = await teacherService.getTeacher(req.body)
         res.status(200).json(resolt)
     } catch (err) {
         res.status(400).json(err)
